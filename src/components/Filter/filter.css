@@ -1,0 +1,10 @@
+.filter-form{
+    /* background-color: aliceblue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+.filter-container{
+    width: 83%;
+}

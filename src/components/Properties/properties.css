@@ -1,0 +1,23 @@
+.icon-conatiner{
+    justify-content: center;
+    align-items: center;
+}
+.properties-container{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.properties-image{
+    width: 300px;
+    height: 120px;
+    object-fit: cover;
+}
+.location-price{
+    font-size: 34px;
+    font-weight: 700;
+    color: blue;
+}
+.search-button{
+    height: 40px;
+}
