@@ -15,6 +15,7 @@ export default function Filter() {
       dimensions: "5x7",
       city: "FL",
       propertyType: "Flats",
+      priceRange: "3",
     },
     {
       name: "Beverly Springfield",
@@ -27,6 +28,7 @@ export default function Filter() {
       dimensions: "6x7.5",
       city: "TX",
       propertyType: "Apartments",
+      priceRange: "4",
     },
     {
       name: "Fauler Ave",
@@ -39,6 +41,7 @@ export default function Filter() {
       dimensions: "8x10",
       city: "IN",
       propertyType: "Houses",
+      priceRange: "5",
     },
     {
       name: "Pike Ave",
@@ -51,6 +54,7 @@ export default function Filter() {
       dimensions: "8x12",
       city: "CA",
       propertyType: "Houses",
+      priceRange: "5",
     },
     {
       name: "Bensen Street",
@@ -63,6 +67,7 @@ export default function Filter() {
       dimensions: "11x12",
       city: "NY",
       propertyType: "Flats",
+      priceRange: "3",
     },
     {
       name: "mapple drive",
@@ -75,6 +80,7 @@ export default function Filter() {
       dimensions: "8x10",
       city: "MP",
       propertyType: "Apartments",
+      priceRange: "3",
     },
     {
       name: "Wilson park",
@@ -87,6 +93,7 @@ export default function Filter() {
       dimensions: "8x10",
       city: "FL",
       propertyType: "Houses",
+      priceRange: "4",
     },
     {
       name: "Thrash Trail",
@@ -98,6 +105,7 @@ export default function Filter() {
       dimensions: "8x11",
       city: "TX",
       propertyType: "Apartments",
+      priceRange: "3",
     },
     {
       name: "Cabell Avenue",
@@ -110,6 +118,7 @@ export default function Filter() {
       dimensions: "11x10",
       city: "VG",
       propertyType: "Houses",
+      priceRange: "4",
     },
   ];
 
@@ -131,17 +140,22 @@ export default function Filter() {
 
   const [item, setItem] = useState(data);
   function filterItem(firstFilter) {
-    if (firstFilter.location !== "All" && firstFilter.propType !== "All") {
+    if (
+      firstFilter.location !== "All" &&
+      firstFilter.propType !== "All" &&
+      firstFilter.price !== "All"
+    ) {
       let filterArr1 = data.filter((ele1) => {
         return (
           ele1?.city === firstFilter.location &&
-          ele1.propertyType === firstFilter.propType
+          ele1.propertyType === firstFilter.propType &&
+          ele1.priceRange === firstFilter.price
         );
       });
       setItem(filterArr1);
     } else if (
       firstFilter.propType === "All" &&
-      firstFilter.location !== "All"
+      firstFilter.location !== "All" && firstFilter.price ==="All"
     ) {
       let filterArr1 = data.filter((ele1) => {
         return ele1?.city === firstFilter.location;
@@ -149,10 +163,43 @@ export default function Filter() {
       setItem(filterArr1);
     } else if (
       firstFilter.propType !== "All" &&
-      firstFilter.location === "All"
+      firstFilter.location === "All" && firstFilter.price ==="All"
     ) {
       let filterArr1 = data.filter((ele1) => {
         return ele1.propertyType === firstFilter.propType;
+      });
+      setItem(filterArr1);
+    }else if(firstFilter.propType === "All" &&
+    firstFilter.location === "All" && firstFilter.price !=="All"){
+      let filterArr1 = data.filter((ele1) => {
+        return ele1.priceRange === firstFilter.price;
+      });
+      setItem(filterArr1);
+    }else if(firstFilter.propType !== "All" &&
+    firstFilter.location !== "All" && firstFilter.price ==="All"){
+      let filterArr1 = data.filter((ele1) => {
+        return (
+          ele1?.city === firstFilter.location &&
+          ele1.propertyType === firstFilter.propType
+        );
+      });
+      setItem(filterArr1);
+    }else if(firstFilter.propType !== "All" &&
+    firstFilter.location === "All" && firstFilter.price !=="All"){
+      let filterArr1 = data.filter((ele1) => {
+        return (
+          ele1.propertyType === firstFilter.propType &&
+          ele1.priceRange === firstFilter.price
+        );
+      });
+      setItem(filterArr1);
+    }else if(firstFilter.propType === "All" &&
+    firstFilter.location !== "All" && firstFilter.price !=="All"){
+      let filterArr1 = data.filter((ele1) => {
+        return (
+          ele1?.city === firstFilter.location &&
+          ele1.priceRange === firstFilter.price
+        );
       });
       setItem(filterArr1);
     } else {
