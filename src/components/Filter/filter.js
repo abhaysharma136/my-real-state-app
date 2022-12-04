@@ -132,13 +132,31 @@ export default function Filter() {
 
   const [item, setItem] = useState(data);
   function filterItem(firstFilter) {
-    
+    if((firstFilter.location!=="All")&&(firstFilter.propType!=="All")){
       let filterArr1 = data.filter((ele1) =>{
 
         return (ele1?.city === firstFilter.location)&&(ele1.propertyType===firstFilter.propType);
        } 
        );
        setItem(filterArr1);
+    }else if((firstFilter.propType==="All")&&(firstFilter.location!=="All")){
+      let filterArr1 = data.filter((ele1) =>{
+
+        return (ele1.propertyType===firstFilter.propType);
+       } 
+       );
+       setItem(filterArr1);
+    }else if((firstFilter.propType!=="All")&&(firstFilter.location==="All")){
+      let filterArr1 = data.filter((ele1) =>{
+
+        return (ele1?.city === firstFilter.location);
+       } 
+       );
+       setItem(filterArr1);
+    }else{
+      setItem(data);
+    }
+      
     
     
     
