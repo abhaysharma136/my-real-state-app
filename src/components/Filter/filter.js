@@ -274,7 +274,7 @@ export default function Filter() {
           </Button>
         </form>
       </div>
-      <DisplayProperties result={result} item={item} />
+      {item.length>0?<DisplayProperties result={result} item={item} />:<h2>"Sorry no match found"</h2>}
     </div>
   );
 }
