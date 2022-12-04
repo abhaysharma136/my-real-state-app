@@ -1,6 +1,5 @@
 import React from "react";
 import Filter from "../../components/Filter/filter";
-import DisplayProperties from "../../components/Properties/properties";
 import './home.css';
 
 export default function Home() {
@@ -8,7 +7,6 @@ export default function Home() {
     <div className="homepage-container flex">
       <h1>Search properties to rent</h1>
       <Filter/>
-      <DisplayProperties/>
     </div>
   );
 }

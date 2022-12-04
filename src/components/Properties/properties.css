@@ -3,7 +3,7 @@
     align-items: center;
 }
 .properties-container{
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
@@ -21,3 +21,4 @@
 .search-button{
     height: 40px;
 }
+
