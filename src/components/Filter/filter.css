@@ -4,7 +4,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 10px 0px;
+    flex-wrap: wrap;
 }
 .filter-container{
-    width: 83%;
+    width: 100%;
+}
+
+.top-container{
+   flex-direction: column;
 }

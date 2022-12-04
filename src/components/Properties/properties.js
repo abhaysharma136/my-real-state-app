@@ -4,7 +4,7 @@ import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
 import StraightenOutlinedIcon from "@mui/icons-material/StraightenOutlined";
 import "./properties.css";
 
-export default function DisplayProperties({result,item}) {
+export default function DisplayProperties({item}) {
   
 
   

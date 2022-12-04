@@ -207,7 +207,7 @@ export default function Filter() {
     }
   }
   return (
-    <div>
+    <div className="top-container flex">
       <div className="filter-container">
         <form className="filter-form">
           <div>
